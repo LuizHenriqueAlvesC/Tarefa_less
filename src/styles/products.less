@@ -21,29 +21,32 @@ section {
     
             img {
                 max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+                max-height: 100%;
             }
     
             h4 {
+                padding-top: 8px;
                 margin-bottom: 5px; /* Reduz o espaço entre o título e o parágrafo */
             }
     
             p {
-                margin-bottom: 0; /* Remove o espaço abaixo do parágrafo */
+                margin-bottom: 12px; /* Remove o espaço abaixo do parágrafo */
                 text-align: center; /* Alinha o texto ao centro */
+                max-width: 60%; /* Deixandoo um espaço que não vaza */
                 flex-grow: 1; /* Faz com que o parágrafo ocupe o espaço restante na direção vertical */
                 padding: 0 10px; /* Adiciona um pouco de espaço ao redor do texto */
             }
         @media @breakpointTable {
             width: calc(50% - 10px); /* Para telas menores, ajusta para no máximo 2 itens por linha */
+            p {
+                max-width: 50%;
+            }
         }
 
         @media @breakpointMobile {
             width: 100%; /* Para telas muito pequenas, exibe 1 item por linha */
-            h4 {
-                padding-top: 8px;
-            }
-            h2 {
-                align-items: center;
+            p {
+                max-width: 50%;
             }
         }
     }

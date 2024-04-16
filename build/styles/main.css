@@ -65,16 +65,20 @@ section {
 .products .product-item img {
   max-width: 100%;
   /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+  max-height: 100%;
 }
 .products .product-item h4 {
+  padding-top: 8px;
   margin-bottom: 5px;
   /* Reduz o espaço entre o título e o parágrafo */
 }
 .products .product-item p {
-  margin-bottom: 0;
+  margin-bottom: 12px;
   /* Remove o espaço abaixo do parágrafo */
   text-align: center;
   /* Alinha o texto ao centro */
+  max-width: 60%;
+  /* Deixandoo um espaço que não vaza */
   flex-grow: 1;
   /* Faz com que o parágrafo ocupe o espaço restante na direção vertical */
   padding: 0 10px;
@@ -85,16 +89,16 @@ section {
     width: calc(50% - 10px);
     /* Para telas menores, ajusta para no máximo 2 itens por linha */
   }
+  .products .product-item p {
+    max-width: 50%;
+  }
 }
 @media (max-width:767px) {
   .products .product-item {
     width: 100%;
     /* Para telas muito pequenas, exibe 1 item por linha */
   }
-  .products .product-item h4 {
-    padding-top: 8px;
-  }
-  .products .product-item h2 {
-    align-items: center;
+  .products .product-item p {
+    max-width: 50%;
   }
 }
