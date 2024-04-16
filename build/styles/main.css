@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+.container {
+  position: relative;
+  max-width: 1024px;
+  width: 100%;
+}
+li {
+  list-style: none;
+}
+li a {
+  padding-left: 12px;
+  color: #0984e3;
+  text-decoration: none;
+}
+h2 {
+  margin: 32px;
+}
+header {
+  background-color: #d63031;
+  border-bottom: 18px solid #ff7675;
+  position: sticky;
+}
+header .container {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container .branding img {
+  width: 180px;
+  margin-left: 32px ;
+}
+header .container nav li {
+  display: inline;
+}
+header .container nav a {
+  color: #fff;
+}
+section {
+  display: flex;
+  justify-content: center;
+  /* Alinha os produtos ao centro horizontal da tela */
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.products .product-item {
+  width: calc(33.33% - 10px);
+  /* Define a largura de cada item com no máximo 3 itens por linha */
+  margin-bottom: 20px;
+  display: flex;
+  /* Para usar flexbox */
+  flex-direction: column;
+  /* Ajusta a direção dos itens para empilhar verticalmente */
+  align-items: center;
+  /* Alinha os itens ao centro horizontal */
+}
+.products .product-item img {
+  max-width: 100%;
+  /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+}
+.products .product-item h4 {
+  margin-bottom: 5px;
+  /* Reduz o espaço entre o título e o parágrafo */
+}
+.products .product-item p {
+  margin-bottom: 0;
+  /* Remove o espaço abaixo do parágrafo */
+  text-align: center;
+  /* Alinha o texto ao centro */
+  flex-grow: 1;
+  /* Faz com que o parágrafo ocupe o espaço restante na direção vertical */
+  padding: 0 10px;
+  /* Adiciona um pouco de espaço ao redor do texto */
+}
+@media (min-width:768px) and (max-width:1023px) {
+  .products .product-item {
+    width: calc(50% - 10px);
+    /* Para telas menores, ajusta para no máximo 2 itens por linha */
+  }
+}
+@media (max-width:767px) {
+  .products .product-item {
+    width: 100%;
+    /* Para telas muito pequenas, exibe 1 item por linha */
+  }
+  .products .product-item h4 {
+    padding-top: 8px;
+  }
+  .products .product-item h2 {
+    align-items: center;
+  }
+}

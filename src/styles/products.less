@@ -1,0 +1,50 @@
+@breakpointMobile: ~"(max-width:767px)";
+@breakpointTable: ~"(min-width:768px) and (max-width:1023px)";
+
+
+section {
+    display: flex;
+    justify-content: center; /* Alinha os produtos ao centro horizontal da tela */
+}
+    
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    
+        .product-item {
+            width: calc(33.33% - 10px); /* Define a largura de cada item com no máximo 3 itens por linha */
+            margin-bottom: 20px;
+            display: flex; /* Para usar flexbox */
+            flex-direction: column; /* Ajusta a direção dos itens para empilhar verticalmente */
+            align-items: center; /* Alinha os itens ao centro horizontal */
+    
+            img {
+                max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+            }
+    
+            h4 {
+                margin-bottom: 5px; /* Reduz o espaço entre o título e o parágrafo */
+            }
+    
+            p {
+                margin-bottom: 0; /* Remove o espaço abaixo do parágrafo */
+                text-align: center; /* Alinha o texto ao centro */
+                flex-grow: 1; /* Faz com que o parágrafo ocupe o espaço restante na direção vertical */
+                padding: 0 10px; /* Adiciona um pouco de espaço ao redor do texto */
+            }
+        @media @breakpointTable {
+            width: calc(50% - 10px); /* Para telas menores, ajusta para no máximo 2 itens por linha */
+        }
+
+        @media @breakpointMobile {
+            width: 100%; /* Para telas muito pequenas, exibe 1 item por linha */
+            h4 {
+                padding-top: 8px;
+            }
+            h2 {
+                align-items: center;
+            }
+        }
+    }
+}
